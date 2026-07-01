@@ -1,0 +1,11 @@
+{
+  "name": "erlang-polycall",
+  "version": "1.5.0",
+  "language": "Erlang",
+  "adapter": true,
+  "ffi": true,
+  "config": "erlang-polycallrc",
+  "core": "../../src",
+  "license": "MIT OBINexus",
+  "author": "Nnamdi Michael Okpala"
+}
