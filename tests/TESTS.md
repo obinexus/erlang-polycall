@@ -1,4 +1,5 @@
-# Erlang tests (scaffold)
+# Erlang tests
 
-Add a smoke test that loads `../erlang-polycallrc`, calls the adapter, and asserts a
-zero status. Mirror the reference bindings (pypolycall / rust-polycall).
+The native test verifies exact path, `run=1`, and status forwarding without
+requiring OTP. When OTP is installed, `make test-erlang` builds a mock NIF and
+verifies Erlang binary/list paths, result tuples, and exception behavior.

@@ -1,0 +1,73 @@
+{
+  "name": "@obinexusltd/erlang-polycall",
+  "version": "1.0.0",
+  "description": "Erlang NIF binding for the libpolycall 1.5.0 FFI.",
+  "keywords": [
+    "erlang",
+    "otp",
+    "nif",
+    "libpolycall",
+    "ffi"
+  ],
+  "homepage": "https://github.com/obinexus/erlang-polycall#readme",
+  "bugs": {
+    "url": "https://github.com/obinexus/erlang-polycall/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obinexus/erlang-polycall.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Nnamdi Michael Okpala",
+    "email": "okpalan@protonmail.com"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./src/*": "./src/*",
+    "./c_src/*": "./c_src/*",
+    "./include/*": "./include/*",
+    "./generated/*": "./generated/*",
+    "./examples/*": "./examples/*",
+    "./config": "./erlang-polycallrc",
+    "./manifest": "./polycall-binding.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "src/",
+    "c_src/",
+    "include/",
+    "generated/",
+    "examples/",
+    "tests/",
+    "scripts/",
+    "Makefile",
+    "polycall-binding.json",
+    "erlang-polycallrc",
+    "README.md",
+    "TODO.md"
+  ],
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "make",
+    "clean": "make clean",
+    "test": "make test && node tests/package.test.js",
+    "test:erlang": "make test-erlang",
+    "verify": "make verify-dry",
+    "prepack": "npm run test && npm run verify"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

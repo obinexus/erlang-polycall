@@ -1,0 +1,8 @@
+build/
+ebin/
+lib/
+priv/
+*.beam
+*.o
+*.obj
+*.tgz

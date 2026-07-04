@@ -1,0 +1,7 @@
+{application, erlang_polycall,
+ [{description, "Erlang binding for libpolycall"},
+  {vsn, "1.0.0"},
+  {modules, [erlang_polycall]},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {env, []}]}.
