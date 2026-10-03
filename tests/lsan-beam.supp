@@ -1,0 +1,18 @@
+# LeakSanitizer suppressions for scripts/test-memory.sh asan -- BEAM (ERTS)
+# allocations ONLY. Each entry is an allocation the Erlang runtime makes for
+# its whole lifetime and does not free at erlang:halt/1; it was observed with
+# OTP 27.3.4.18 (erts 15.2.7.13, image erlang:27) with no polycall code in
+# the stack. Never add a frame of erlang_polycall_nif.so or libpolycall here:
+# a leak there must fail the run.
+
+# erts/emulator/sys/unix/sys_signal_stack.c: sigaltstack memory of every
+# ERTS thread (malloc'd in sys_thread_init_signal_stack, kept until exit).
+leak:sys_thread_init_signal_stack
+
+# erts/emulator/beam/beam_load.c (+ external.c literal decoding): code and
+# literal areas of loaded and preloaded modules, live until exit.
+leak:erts_prepare_loading
+
+# erts/etc/common/inet_gethost.c: ERTS's DNS port program (a separate
+# process started by the VM); its request buffer at exit.
+leak:inet_gethost.c
