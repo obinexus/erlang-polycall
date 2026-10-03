@@ -1,7 +1,10 @@
 {application, erlang_polycall,
- [{description, "Erlang binding for libpolycall"},
+ [{description, "Erlang NIF binding for the Polycall C library (binding ABI v1)"},
   {vsn, "1.0.0"},
-  {modules, [erlang_polycall]},
+  {modules, []},
   {registered, []},
   {applications, [kernel, stdlib]},
-  {env, []}]}.
+  {env, []},
+  {licenses, ["MIT"]},
+  {links, [{"GitHub", "https://github.com/obinexus/erlang-polycall"},
+           {"Polycall core", "https://github.com/obinexus/polycall"}]}]}.
