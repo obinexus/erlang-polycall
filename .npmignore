@@ -2,7 +2,10 @@ build/
 ebin/
 lib/
 priv/
+_build/
 *.beam
 *.o
 *.obj
+*.so
 *.tgz
+pyproject.toml

@@ -2,6 +2,11 @@
 /ebin/
 /lib/
 /priv/
+/_build/
 *.beam
 *.o
 *.obj
+*.so
+*.tgz
+rebar3.crashdump
+erl_crash.dump
