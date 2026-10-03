@@ -1,7 +1,7 @@
 {
   "name": "erlang-polycall",
   "version": "1.0.0",
-  "package": "@obinexusltd/erlang-polycall",
+  "package": "erlang-polycall",
   "language": "Erlang",
   "repository": "https://github.com/obinexus/erlang-polycall",
   "adapter": true,

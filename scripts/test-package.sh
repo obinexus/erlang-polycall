@@ -1,5 +1,5 @@
 #!/bin/sh
-# npm source package @obinexusltd/erlang-polycall: pack it, install the
+# npm source package erlang-polycall: pack it, install the
 # tarball into a clean temporary project, check the entry point, then build
 # the NIF from the INSTALLED package sources and run it against the real
 # libpolycall (polycall installed: pkg-config polycall). Exit 77 = SKIP.
@@ -31,12 +31,12 @@ npm init -y >/dev/null || fail "npm init"
 npm install --no-audit --no-fund --silent "$TMP/$TGZ" || fail "npm install of the tarball"
 node -e '
 const fs = require("fs");
-const p = require("@obinexusltd/erlang-polycall");
+const p = require("erlang-polycall");
 for (const [k, v] of Object.entries(p)) if (!fs.existsSync(v)) throw new Error(k + " missing: " + v);
 console.log("entry point OK:", Object.keys(p).join(","));' || fail "entry point"
 
 # build the NIF + beams from the installed package and use the real core
-PKG="$TMP/app/node_modules/@obinexusltd/erlang-polycall"
+PKG="$TMP/app/node_modules/erlang-polycall"
 cp -a "$PKG" "$TMP/build" && cd "$TMP/build" || exit 1
 make --no-print-directory nif beams >"$TMP/build.log" 2>&1 || { cat "$TMP/build.log"; fail "make nif beams"; }
 erl -noshell -pa ebin -eval '

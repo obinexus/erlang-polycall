@@ -1,5 +1,5 @@
 {
-  "name": "@obinexusltd/erlang-polycall",
+  "name": "erlang-polycall",
   "version": "1.0.0",
   "description": "Erlang NIF binding for the Polycall C library (binding ABI v1, polycall >= 1.1.0).",
   "keywords": [

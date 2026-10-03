@@ -2,7 +2,7 @@
 
 Erlang NIF binding for the [Polycall](https://github.com/obinexus/polycall)
 C library, **binding ABI v1** (`polycall >= 1.1.0`, `#include <polycall.h>`).
-Source package on npm: `@obinexusltd/erlang-polycall` (not yet published).
+Source package on npm: `erlang-polycall` (not yet published).
 
 The NIF is a thin marshalling layer over the ABI described in the core's
 `docs/BINDING_ABI.md`: no configuration parsing, no networking of its own.
@@ -123,7 +123,7 @@ for Windows was available in the QA environment.
 
 ## npm source package
 
-`require('@obinexusltd/erlang-polycall')` returns absolute paths to the
+`require('erlang-polycall')` returns absolute paths to the
 Erlang/C sources for build tooling; it contains no JavaScript implementation.
 
 ## License

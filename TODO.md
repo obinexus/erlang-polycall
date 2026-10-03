@@ -12,6 +12,6 @@ valgrind (OTP valgrind emulator) runs.
 - [x] rebar3 project; EUnit suite against the real core; `polycall daemon`
       and `polycall peer serve` interop; memory-tool runs
 - [ ] Windows build of the NIF (no Erlang/OTP for Windows in the QA environment)
-- [ ] Publish `@obinexusltd/erlang-polycall` / a Hex package (not done by QA)
+- [ ] Publish `erlang-polycall` / a Hex package (not done by QA)
 
 Do not add config parsing or runtime logic here — adapt the core only.

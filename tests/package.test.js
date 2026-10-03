@@ -14,14 +14,14 @@ for (const [name, file] of Object.entries(binding)) {
   assert.equal(fs.existsSync(file), true, `${name} does not exist: ${file}`);
 }
 
-assert.equal(pkg.name, '@obinexusltd/erlang-polycall');
+assert.equal(pkg.name, 'erlang-polycall');
 assert.equal(pkg.repository.url, 'git+https://github.com/obinexus/erlang-polycall.git');
 assert.equal(
-  require.resolve('@obinexusltd/erlang-polycall/src/erlang_polycall.erl'),
+  require.resolve('erlang-polycall/src/erlang_polycall.erl'),
   binding.erlangModule
 );
 assert.equal(
-  require.resolve('@obinexusltd/erlang-polycall/c_src/erlang_polycall_nif.c'),
+  require.resolve('erlang-polycall/c_src/erlang_polycall_nif.c'),
   binding.nifSource
 );
 assert.equal(fs.existsSync(path.join(binding.root, 'generated')), false,
