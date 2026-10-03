@@ -1,12 +1,12 @@
 {
   "name": "@obinexusltd/erlang-polycall",
   "version": "1.0.0",
-  "description": "Erlang NIF binding for the libpolycall 1.5.0 FFI.",
+  "description": "Erlang NIF binding for the Polycall C library (binding ABI v1, polycall >= 1.1.0).",
   "keywords": [
     "erlang",
     "otp",
     "nif",
-    "libpolycall",
+    "polycall",
     "ffi"
   ],
   "homepage": "https://github.com/obinexus/erlang-polycall#readme",
@@ -29,7 +29,7 @@
     "./src/*": "./src/*",
     "./c_src/*": "./c_src/*",
     "./include/*": "./include/*",
-    "./generated/*": "./generated/*",
+    "./test/*": "./test/*",
     "./examples/*": "./examples/*",
     "./config": "./erlang-polycallrc",
     "./manifest": "./polycall-binding.json",
@@ -40,28 +40,31 @@
     "src/",
     "c_src/",
     "include/",
-    "generated/",
+    "test/",
     "examples/",
     "tests/",
     "scripts/",
     "Makefile",
+    "rebar.config",
     "polycall-binding.json",
     "erlang-polycallrc",
     "README.md",
-    "TODO.md"
+    "TODO.md",
+    "LICENSE"
   ],
   "directories": {
     "example": "examples",
-    "lib": "lib",
-    "test": "tests"
+    "lib": "src",
+    "test": "test"
   },
   "scripts": {
-    "build": "make",
+    "build": "make nif",
     "clean": "make clean",
-    "test": "make test && node tests/package.test.js",
-    "test:erlang": "make test-erlang",
+    "test": "make test",
+    "test:linux": "sh scripts/test-linux.sh",
+    "test:package": "node tests/package.test.js",
     "verify": "make verify-dry",
-    "prepack": "npm run test && npm run verify"
+    "prepack": "node tests/package.test.js"
   },
   "engines": {
     "node": ">=18",

@@ -1,0 +1,15 @@
+# QA descriptor for the Polycall binding matrix (read by polycall/qa/run_qa.py).
+# This repository is NOT a Python package and is not pip-installable;
+# its native manifest is rebar.config (plus package.json for the npm source package).
+[tool.polycall.binding]
+name = "erlang-polycall"
+language = "Erlang"
+native_manifest = "rebar.config"
+registry = "npm"
+package = "@obinexusltd/erlang-polycall"
+abi = 1
+support = "supported"
+linux_image = "erlang:27"
+build = "make nif"
+test = "sh scripts/test-linux.sh"
+windows_test = ""

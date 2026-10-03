@@ -1,4 +1,4 @@
-# Example Erlang runtime override
+# Example Erlang runtime override (validate: polycall config validate <file>)
 log_level=debug
 max_connections=128
 network_timeout=2000

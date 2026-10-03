@@ -1,8 +1,11 @@
-# erlang-polycallrc - read-only Erlang runtime overrides for libpolycall
+# erlang-polycallrc - Erlang runtime overrides for Polycall
 #
-# This file uses the SHARED polycall schema (src/config/polycall_config_schema.c).
-# It introduces no new keys or parser: the Erlang adapter passes this path to
-# the core via the FFI boundary. Values here override polycallrc for Erlang.
+# Grammar: the core's single configuration grammar. Check this file with
+#   polycall config validate erlang-polycallrc
+# The binding loads it through polycall_ffi_run_config(path, 1)
+# (erlang_polycall:run_config/1), which also rejects unknown keys and
+# settings this build cannot honour (tls_enabled=true). There is no
+# per-language parser.
 
 log_level=info
 max_connections=1000
