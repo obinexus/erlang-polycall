@@ -1,0 +1,5 @@
+# LF in the repository and in every checkout: the shell scripts, Makefile and
+# rebar hooks run under sh (also from a Windows checkout mounted into a
+# Linux container). PowerShell scripts keep CRLF.
+* text=auto eol=lf
+*.ps1 text eol=crlf
